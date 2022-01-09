@@ -47,7 +47,7 @@ public class FolderThemeProvider implements ThemeProvider {
         }
 
         File themeDir = getThemeDir(name, type);
-        return themeDir.isDirectory() ? new FolderTheme(themeDir, name, type) : null;
+        return themeDir.getCanonicalFile().isDirectory() ? new FolderTheme(themeDir, name, type) : null;
     }
 
     @Override
